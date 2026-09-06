@@ -31,8 +31,9 @@ Talend Job  --writes-->  RUNTIME/progress.js  --read every 500ms-->  Web Page
 
 1. Clone or download this repo.
 2. Open `WEB/index.html`, that's the whole "no dependencies" experience.
-3. To drive it with a real Talend job: open **Talend Open Studio** (free Community edition) and follow `TALEND/JOB_CONSTRUCTION.txt`, or the full step-by-step guide in `DOCUMENTATION/`.
-4. Replace the content of `DATA/*.js` with your own resume, no other file needs to change.
+3. To drive it with a real Talend job: open **Talend Open Studio** (free Community edition) and follow `TALEND/JOB_CONSTRUCTION.txt`,
+   or the full step-by-step guide in `DOCUMENTATION/`. The Talend job is located here: TALEND/00_CV_Pipeline_Talend
+5. Replace the content of `DATA/*.js` with your own resume, no other file needs to change.
 
 ## Documentation
 
