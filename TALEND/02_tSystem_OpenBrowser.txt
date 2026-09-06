@@ -1,0 +1,13 @@
+Component : tSystem_OpenBrowser
+Role      : Open the browser once, at the very beginning of the job, to WEB/index.html.
+            It will not be reopened afterward; the page updates automatically via the
+            reload of RUNTIME/progress.js.
+
+--- System command (adapt to the OS of the machine running the job) ---
+
+Windows : cmd /c start "" "" + context.web_path + "/index.html"
+macOS   : open "" + context.web_path + "/index.html"
+Linux   : xdg-open "" + context.web_path + "/index.html"
+
+No local server is required: the page loads its data and
+progress using <script> tags, which work directly with file://.

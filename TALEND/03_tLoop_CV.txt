@@ -1,0 +1,11 @@
+Component : tLoop_CV
+Role 	  : Guides the job through the 5 steps of the resume.
+
+--- Parameters ---
+
+Loop type : For
+From      : 1
+To        : context.total_steps   (5)
+Step      : 1
+
+Exit link : "Iterate" → tJavaFlex_BuildStep

@@ -1,0 +1,23 @@
+Component : tJavaFlex_BuildStep
+Role 	  : Determines the message associated with the current step.
+            Important: This component does NOT generate the CV content (nor does it read experiences.json);
+            that is the role of app.js on the browser side. It simply controls the progress and
+            the message displayed in the status bar.
+
+--- Start code ---
+
+int step = ((Integer) globalMap.get("CV_STEP")) + 1;
+globalMap.put("CV_STEP", step);
+
+String message = "";
+switch (step) {
+	case 1: message = "Loading Candidate Profile"; break;
+	case 2: message = "Loading the Profile Section"; break;
+	case 3: message = "Loading the Skills Section"; break;
+	case 4: message = "Loading the Experience Section"; break;
+	case 5: message = "Final Version of the Resume"; break;
+}
+globalMap.put("CV_MESSAGE", message);
+System.out.println("[STEP " + step + "/5] " + message);
+
+--- End code ---

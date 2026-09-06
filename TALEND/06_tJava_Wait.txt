@@ -1,0 +1,6 @@
+Component : tJava_Wait
+Role 	  : A pause between two steps to allow time for the page to load.
+
+--- Code ---
+
+Thread.sleep(context.step_duration_ms);

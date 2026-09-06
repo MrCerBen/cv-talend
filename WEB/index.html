@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CV PIPELINE TALEND - Oliver Bennett</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="frame">
+    <div class="topbar">
+      <div class="brand">CV PIPELINE MODE DATA TALEND</div>
+      <div class="engine"><span class="dot" id="statusdot"></span><span id="statustext">In waiting...</span></div>
+    </div>
+    <div class="progressrow">
+      <div class="progressbar"><div class="progressfill" id="progressfill"></div></div>
+      <div class="progresspct" id="progresspct">0%</div>
+    </div>
+    <div class="body2">
+      <div class="log">
+        <div class="logtitle">STEP</div>
+        <div class="step" id="s1"><span class="num">01</span>- INITIALIZATION</div>
+        <div class="step" id="s2"><span class="num">02</span>- PROFILE</div>
+        <div class="step" id="s3"><span class="num">03</span>- SKILLS</div>
+        <div class="step" id="s4"><span class="num">04</span>- EXPERIENCE</div>
+        <div class="step" id="s5"><span class="num">05</span>- FINALIZATION</div>
+        <div class="logdivider"></div>
+        <div class="logtitle">CONTROLS</div>
+        <div class="ctrlcol">
+          <button class="ctrlbtn" id="previewbtn">👁 Full Overview</button>
+          <button class="ctrlbtn" id="replaybtn">▶ Replay</button>
+          <button class="ctrlbtn" id="pausebtn">Ⅱ Pause</button>
+          <button class="ctrlbtn" id="stepbtn">Next Step</button>
+        </div>
+		<div class="logdivider"></div>
+		<div class="logtitle">DOWNLOADS</div>
+		<div class="ctrlcol">
+		  <a class="ctrlbtn" href="../CV/PDF/Example_CV_Detailed.pdf" download>CV Detailed - PDF</a>
+		  <a class="ctrlbtn" href="../CV/PDF/Example_CV_Simplified.pdf" download>CV Simplified - PDF</a>
+		  <a class="ctrlbtn" href="../CV/ZIP/Pack_Example_CV.zip" download>Pack Example CV - ZIP</a>
+		  <a class="ctrlbtn" href="../TALEND/00_CV_Pipeline_Talend.zip" download>Job Talend CV - ZIP</a>
+		</div>
+	  </div>
+      <div class="content" id="content">
+        <div class="cvblock" id="step-1"></div>
+        <div class="cvblock" id="step-2"></div>
+        <div class="cvblock" id="step-3"></div>
+        <div class="cvblock" id="step-4"></div>
+        <div class="cvblock" id="step-5"></div>
+      </div>
+    </div>
+  </div>
+  <p class="note">This page waits for a signal from the Talend job (RUNTIME/progress.js) to build section by section. If no job has been started, click "Full Overview" to see the final result right away.</p>
+</div>
+<script src="../DATA/profile.js"></script>
+<script src="../DATA/skills.js"></script>
+<script src="../DATA/experiences.js"></script>
+<script src="../DATA/education.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

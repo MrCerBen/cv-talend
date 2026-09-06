@@ -1,0 +1,24 @@
+Component : tJava_UpdateProgress
+Role 	  : Writes the current status to RUNTIME/progress.js, the only
+            point of contact read by the web page (see WEB/js/app.js).
+
+Important : It is a JS file that calls the onProgressUpdate() function defined on the browser side.
+            This is what allows the page to load it using a simple <script> tag,
+            without ever using fetch()—and therefore without ever needing a
+            local server, regardless of the recruiter's operating system (Windows / macOS / Linux).
+
+--- Code ---
+
+int step       = (Integer) globalMap.get("CV_STEP");
+int total      = (Integer) globalMap.get("CV_TOTAL_STEPS");
+String message = (String) globalMap.get("CV_MESSAGE");
+String status  = (step >= total) ? "COMPLETED" : "RUNNING";
+
+String js = "onProgressUpdate({\n"
+  + "  \"step\": " + step + ",\n"
+  + "  \"total\": " + total + ",\n"
+  + "  \"status\": \"" + status + "\",\n"
+  + "  \"message\": \"" + message + "\"\n"
+  + "});";
+
+java.nio.file.Files.write(java.nio.file.Paths.get(context.progress_path),js.getBytes());

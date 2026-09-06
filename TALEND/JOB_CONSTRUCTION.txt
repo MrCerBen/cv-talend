@@ -1,0 +1,41 @@
+JOB_CONSTRUCTION — CV_PIPELINE_TALEND
+=====================================
+
+Order of Components and Connections :
+
+  tJava_Init
+      | OnSubjobOk
+  tSystem_OpenBrowser
+      | OnSubjobOk
+  tLoop_CV (1 to 5)
+      | Iterate
+  tJavaFlex_BuildStep
+      | OnComponentOk
+  tJava_UpdateProgress
+      | OnComponentOk
+  tJava_Wait
+      |
+      (Automatically return to tLoop_CV for the next iteration)
+
+
+Context variables to create in the "Contexts" tab of the job :
+
+  context.cv_path          = PATH_TO_DIRECTORY/CV/CV_PIPELINE_TALEND/
+  context.web_path         = PATH_TO_DIRECTORY/CV/CV_PIPELINE_TALEND/WEB/
+  context.progress_path    = PATH_TO_DIRECTORY/CV/CV_PIPELINE_TALEND/RUNTIME/progress.js
+  context.total_steps      = 5
+  context.step_duration_ms = 3000
+
+(Adjust the root path to reflect the location where you unzipped this project on your computer.)
+
+
+Important reminder:
+The Talend job never reads experiences.js, skills.js, profile.js, or education.js.
+These four files are read only by the browser (WEB/js/app.js) via <script> tags,
+so no local server is needed. The job simply reports its progress via progress.js.
+To update the resume content, edit the files in DATA/—no changes to the job
+are necessary.
+
+See the "Construction Guide" PDF for step-by-step details, and the
+"Architecture Note" PDF for the rationale behind these choices in the
+DOCUMENTATION section.

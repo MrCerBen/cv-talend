@@ -1,0 +1,11 @@
+Component : tJava_Init
+Role 	  : First component of the job. Initializes the step counter and displays a startup message in the Talend console.
+
+--- Code ---
+
+
+globalMap.put("CV_STEP", 0);
+globalMap.put("CV_TOTAL_STEPS", context.total_steps);
+System.out.println("=============================");
+System.out.println(" CV_PIPELINE - INITIALIZATION");
+System.out.println("=============================");
